@@ -23,3 +23,6 @@ auto br0
  - virsh shutdown <vm-name>
  - virsh destroy <vm-name>
  - virsh edit <vm-name>
+
+## Se connecter en graphique sur une VM 
+ - xtightvncviewer localhost

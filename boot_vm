@@ -1,0 +1,2 @@
+#!/bin/sh 
+kvm -hda ~/vms/${1} -m 512
