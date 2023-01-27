@@ -26,3 +26,7 @@ auto br0
 
 ## Se connecter en graphique sur une VM 
  - xtightvncviewer localhost
+
+## Notes
+ - https://ahelpme.com/linux/howto-do-qemu-full-virtualization-with-bridged-networking/
+ - https://wiki.qemu.org/Documentation/Networking

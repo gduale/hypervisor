@@ -1,2 +1,0 @@
-#!/bin/sh
-qemu-img create -f qcow2 ~/vms/${1}.dd 10G
