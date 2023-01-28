@@ -1,2 +1,11 @@
 #!/bin/sh
+
+usage() {
+  echo "$(basename $0) <vm_name>"
+  exit 1
+}
+
+[ $# -ne 1 ] && usage
+
+
 qemu-img create -f qcow2 ~/vm/${1}.dd 20G

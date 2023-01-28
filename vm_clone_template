@@ -1,3 +1,10 @@
 #!/bin/sh 
 
-cp ~/vm/debian-template.dd ~/vm/${1}.dd
+usage() {
+  echo "$(basename $0) <vm_name>"
+  exit 1
+}
+
+[ $# -ne 1 ] && usage
+
+cp ~/vm/template-debian.qcow2 ~/vm/${1}.qcow2

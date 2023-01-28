@@ -6,6 +6,7 @@
  - sudo apt install qemu-kvm bridge-utils qemu-utils libvirt-daemon-system libvirt-clients virtinst netcat-openbsd
  - sudo apt install virt-manager #(Le client graphique)
  - sudo systemctl restart libvirtd
+ - sudo cp qemu-ifup /etc/
 
 ## Mise en place du bridge 
  - sudo brctl addbr br0

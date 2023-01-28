@@ -7,7 +7,12 @@ usage() {
 
 [ $# -ne 1 ] && usage
 
-#kvm -hda ~/vm/${1} -m 512
+curr_dir=$(dirname $0)
+macaddr=$($(echo $curr_dir)/genmacaddr.py)
+rand=$(shuf -i 0-99999 -n1)
+
+# check if virtXXX already exist
+#ip a | awk '{print $2}' | sed 's/://g' | grep br
+
 #sudo kvm -hda ~/vm/$1 -m 1024 -net nic,model=virtio -net tap,ifname=tap0,script=no,downscript=no
-#sudo kvm -hda ~/vm/$1 -m 1024 -net tap,ifname=tap0,script=no,downscript=no
-sudo qemu-system-x86_64 -enable-kvm -hda ~/vm/debian1.qcow2 -m 1024 -net nic,model=virtio -net tap,ifname=tap0
+sudo qemu-system-x86_64 -enable-kvm -hda ~/vm/$1 -m 1024 -net nic,model=virtio,macaddr=$macaddr -net tap,ifname=virt${rand} -smp 2 -runas libvirt-qemu
